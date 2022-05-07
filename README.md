@@ -23,3 +23,6 @@ $ docker-compose up
 ```
 _Application will start on port `4040`. Navigate to [App](http://localhst:4040)_ 
 
+## DB Diagram
+There will two tables `users` and `urls`.
+![Test Image 1](./db-diagram.png)
