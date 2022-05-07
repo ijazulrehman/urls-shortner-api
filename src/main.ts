@@ -17,7 +17,6 @@ async function bootstrap() {
     .setDescription('URLs Shortener API')
     .setVersion('1.0')
     .addBearerAuth()
-    .addTag('urls')
     .build()
 
   const document = SwaggerModule.createDocument(app, options)
