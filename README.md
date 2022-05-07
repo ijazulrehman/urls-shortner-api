@@ -10,7 +10,7 @@
 ## Prerequisite 
 - Docker installation
 
-## Dependecies installation
+## Dependencies installation
 Need to run 
 ```bash
 $ yarn
