@@ -41,4 +41,4 @@ The Appropriate sequence to test the APIs
 
 ## DB Diagram
 There will two tables `users` and `urls`.
-![Test Image 1](./dbDiagram.png)
+![Test Image 1](./db-diagram.png)
