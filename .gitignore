@@ -3,6 +3,10 @@
 /node_modules
 /pgdata
 /pgadmin-data
+/pgadmin/sessions/
+
+#env 
+.env
 
 # Logs
 logs
