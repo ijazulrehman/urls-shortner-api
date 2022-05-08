@@ -1,12 +1,13 @@
 /*
  * @format
  */
-import { Entity, Column, Index, BeforeInsert } from "typeorm";
+import { Entity, Column, Index, BeforeInsert, OneToMany } from "typeorm";
 import { getJWT, getHash, compareHash, verifyJWT } from "../../lib/encryption";
 import { IsNotEmpty, IsEmail } from 'class-validator';
 import { Base } from "../../lib/entities/base";
 import { ApiProperty } from "@nestjs/swagger";
-import { Transform } from "class-transformer";
+import { Exclude, Transform } from "class-transformer";
+import { UrlEntity } from "src/url/entities/url.entity";
 
 
 
@@ -18,7 +19,7 @@ export class UserEntity extends Base {
         if (!token || token.length === 0) {
             return Promise.resolve(null);
         }
-        let payload: { id: string };
+        let payload: { id: number };
         try {
             payload = verifyJWT(token) as any;
         } catch (e) {
@@ -45,11 +46,16 @@ export class UserEntity extends Base {
     @Column({ nullable: true })
     name: string;
 
+    @Exclude()
     @Column({ nullable: true })
     @IsNotEmpty()
     encryptedPassword: string;
 
+    @Exclude()
     password: string;
+
+    @OneToMany(() => UrlEntity, url => url.user)
+    urls: UrlEntity[]
 
     async comparePassword(plainString: string): Promise<boolean> {
         return await compareHash(plainString, this.encryptedPassword);

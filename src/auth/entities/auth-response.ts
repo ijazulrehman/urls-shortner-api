@@ -1,13 +1,13 @@
 //
 
 import { ApiProperty } from "@nestjs/swagger";
-import { IsUUID } from "class-validator";
+import { IsNumber } from "class-validator";
 import { AuthResponse } from "../auth";
 
 export class AuthReponseEntity implements AuthResponse {
     @ApiProperty()
-    @IsUUID()
-    id: string;
+    @IsNumber()
+    id: number;
 
     @ApiProperty()
     name: string;

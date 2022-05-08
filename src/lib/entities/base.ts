@@ -27,8 +27,8 @@ export abstract class Base extends BaseEntity {
     }
 
     @ApiProperty()
-    @PrimaryGeneratedColumn("uuid")
-    id: string;
+    @PrimaryGeneratedColumn()
+    id: number;
 
     @ApiProperty()
     @CreateDateColumn({ type: "timestamp" })

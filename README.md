@@ -15,7 +15,11 @@ Need to run
 ```bash
 $ yarn
 ```
-
+## Environment Variables
+Need to run 
+```bash
+$ cp .env.example .env
+```
 ## Running the app
 Need to run
 ```bash

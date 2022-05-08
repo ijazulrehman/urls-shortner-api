@@ -3,7 +3,7 @@
 import { UserRole } from "src/user/user.enum";
 
 export interface UserInfo {
-    id: string,
+    id: number,
     name: string,
     email: string
 }
